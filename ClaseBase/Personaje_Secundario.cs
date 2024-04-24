@@ -19,5 +19,16 @@ namespace Evaluación_Segundo_Parcial.ClaseBase
         public int Velocidad {get; set;}
         public int Dano { get; set;}
 
+
+        //POLIMORFISMO ESTÁTICO ===========================
+        public virtual void Avanzar(int _adelante)
+        {
+            Console.WriteLine($"Personaje Caminando...");
+        }
+        public virtual void Avanzar(int _adelante, int _velocidad)
+        {
+            Console.WriteLine($"Personaje Corriendo...");
+        }
+
     }
 }

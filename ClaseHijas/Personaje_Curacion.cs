@@ -14,5 +14,15 @@ namespace Evaluación_Segundo_Parcial.ClaseHijas
         public int mana {  get; set; }
 
 
+        //POLIMORFISMO DINAMICO =====================================
+        public override void Avanzar(int _adelante)
+        {
+            Console.WriteLine($"Mia Caminando...");
+        }
+        public override void Avanzar(int _adelante, int _velocidad)
+        {
+            Console.WriteLine($"Mia Corriendo...");
+        }
+
     }
 }

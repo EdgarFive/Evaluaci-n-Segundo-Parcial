@@ -10,5 +10,17 @@ namespace Evaluación_Segundo_Parcial.ClaseHijas
     internal class Personaje_Fuerza : Personaje_Secundario
     {
         public int Cantidad_Fuerza { get; set; }
+
+
+        //POLIMORFISMO DINAMICO =====================================
+        public override void Avanzar(int _adelante)
+        {
+            Console.WriteLine($"Garet Caminando...");
+        }
+        public override void Avanzar(int _adelante, int _velocidad)
+        {
+            Console.WriteLine($"Garet Corriendo...");
+        }
+
     }
 }
