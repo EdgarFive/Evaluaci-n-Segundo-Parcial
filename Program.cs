@@ -19,6 +19,7 @@ static void ffpersonaje_curacion()
     ccpersonaje_curacion.Nombre = "Mia";
     ccpersonaje_curacion.Compleccion = "Delgada";
     ccpersonaje_curacion.Color_cabello = "Cian";
+    ccpersonaje_curacion.Arma = "Báculo";
     ccpersonaje_curacion.salud = 50;
     ccpersonaje_curacion.Velocidad = 10;
     ccpersonaje_curacion.Dano = 50;
@@ -41,6 +42,7 @@ static void ffpersonaje_fuerza()
     ccpersonaje_fuerza.Nombre = "Garet";
     ccpersonaje_fuerza.Compleccion = "Robusto";
     ccpersonaje_fuerza.Color_cabello = "PeliRojo";
+    ccpersonaje_fuerza.Arma = "Espada";
     ccpersonaje_fuerza.salud = 50;
     ccpersonaje_fuerza.Velocidad = 6;
     ccpersonaje_fuerza.Dano = 60;
@@ -60,6 +62,7 @@ static void ffpersonaje_megia()
     ccpersonaje_magia.Nombre = "Ivan";
     ccpersonaje_magia.Compleccion = "Delgado";
     ccpersonaje_magia.Color_cabello = "Rubio";
+    ccpersonaje_magia.Arma = "Báculo";
     ccpersonaje_magia.salud = 50;
     ccpersonaje_magia.Velocidad = 10;
     ccpersonaje_magia.Dano = 50;

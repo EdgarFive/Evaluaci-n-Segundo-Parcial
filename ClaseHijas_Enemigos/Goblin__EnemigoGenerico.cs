@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Evaluación_Segundo_Parcial.ClaseHijas_Enemigos
 {
-    internal class Goblin__EnemigoGenerico : Enemigo_Generico, IGuerrero
+    internal class Goblin__EnemigoGenerico : Enemigo_Generico, IEnemigo_Guerrero
     {
         //Dato extra de la clase secundaria de enemigo Goblin =============
         public string Arma = "Daga";
