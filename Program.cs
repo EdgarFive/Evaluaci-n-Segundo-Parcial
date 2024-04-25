@@ -1,6 +1,7 @@
 ﻿
 using Evaluación_Segundo_Parcial.ClaseBase;
 using Evaluación_Segundo_Parcial.ClaseHijas;
+using Evaluación_Segundo_Parcial.Eventos;
 
 //Evaluación Segundo Parcial Edgar Chinchilla ==================================================
 
@@ -74,7 +75,16 @@ static void ffpersonaje_megia()
     ccpersonaje_magia.cantidad_mana = 20;
 }
 
+static void ffGenerar_Ecenario()
+{
+    EditorBatallas eeEvento_inicio = new EditorBatallas();
+    Esenario Generar_esenario = new Esenario();
+    eeEvento_inicio.EE_Evento_Batalla += Generar_esenario.Generar_terreno;
+    eeEvento_inicio.EE_Evento_Batalla += Generar_esenario.Generar_interfaz;
+    eeEvento_inicio.EE_Evento_Batalla += Generar_esenario.Generar_Personajes;
 
+    eeEvento_inicio.Se_inicia_batalla(true);
+}
 
 
 /*
@@ -96,6 +106,12 @@ static void ffpersonaje_secundario()
 //==============================================================================================
 
 ffpersonaje_curacion();
+
+Console.WriteLine($"");
+
+ffGenerar_Ecenario();
+
+
 Console.ReadKey();
 
 
