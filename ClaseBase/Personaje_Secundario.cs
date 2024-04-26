@@ -103,8 +103,16 @@ namespace Evaluación_Segundo_Parcial.ClaseBase
             Console.WriteLine($"Daño: {Dano}");
             Console.WriteLine($"Altura: {Altura}");
 
-            MovimientoAtacar();
         }
+        public virtual void Mostrar_armas()
+        {
+            Console.WriteLine($"Armas de {Nombre}:");
+            Console.WriteLine($"1. {armas[0]}");
+            Console.WriteLine($"2. {armas[1]}");
+            Console.WriteLine($"3. {armas[2]}");
+        }
+
+
         //======================================================================
 
     }
