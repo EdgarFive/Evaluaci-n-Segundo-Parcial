@@ -23,6 +23,15 @@ namespace Evaluación_Segundo_Parcial.ClaseHijas
         {
             Console.WriteLine($"Mia Corriendo...");
         }
+        public void Se_Mostrardatos()
+        {
+            Console.WriteLine($"\nPersonaje Curación.");
+            Console.WriteLine($"\nHerencia =============================");
+            Mostrarinfo();
+            Console.WriteLine($"\nPersonales =============================");
+            Console.WriteLine($"Curación: {Cantidad_Curacion}");
+            Console.WriteLine($"Mana: {mana}");
+        }
 
     }
 }

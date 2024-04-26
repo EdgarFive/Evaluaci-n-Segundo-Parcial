@@ -12,17 +12,18 @@ namespace Evaluación_Segundo_Parcial.ClaseBase
     {
         //Abstracción =========================================
         public string Hombre_Mujer { get; set; }
-        public string Nombre {get; set;}
-        public string Compleccion {get; set;}
+        public string Nombre { get; set; }
+        public string Compleccion { get; set; }
         public string Color_cabello { get; set; }
-        public string Arma {  get; set;}
-        public int salud {get; set;}
-        public int Velocidad {get; set;}
-        public int Dano { get; set;}
+        public string Arma { get; set; }
+        public int salud { get; set; }
+        public int Velocidad { get; set; }
+        public int Dano { get; set; }
 
         //Encapsulamiento ======================================
         private double Altura { get; set; }
-        
+
+        //Propiedad ============================================
         public double _Altura
         {
             get { return _Altura; }
@@ -55,10 +56,53 @@ namespace Evaluación_Segundo_Parcial.ClaseBase
             Console.WriteLine($"{Nombre} sujeta su arma firmemente.");
         }
 
+
+        //INDEXADORES ===========================================================
+
+        // Array para almacenar las armas ===================
+        private string[] armas = new string[3];
+
+        // Indexador para acceder a las armas ===============
+        public string this[int indice]
+        {
+            get
+            {
+                if (indice >= 0 && indice < armas.Length)
+                {
+                    return armas[indice];
+                }
+                else
+                {
+                    throw new IndexOutOfRangeException("El índice está fuera de rango.");
+                } //Generamos una exepción para que el programa no se cierre ============
+            }
+            set
+            {
+                if (indice >= 0 && indice < armas.Length)
+                {
+                    armas[indice] = value;
+                }
+                else
+                {
+                    throw new IndexOutOfRangeException("El índice está fuera de rango.");
+                }
+            }
+        }
+
+
         //Solo para poder probar como funcionan el encapsulamiento ============
         public virtual void Mostrarinfo()
         {
+            Console.WriteLine($"Genero: {Hombre_Mujer}");
+            Console.WriteLine($"Nombre: {Nombre}");
+            Console.WriteLine($"Complección: {Compleccion}");
+            Console.WriteLine($"Color del Cabello: {Color_cabello}");
+            Console.WriteLine($"Arma principal: {Arma}");
+            Console.WriteLine($"Salud: {salud}");
+            Console.WriteLine($"Velocidad: {Velocidad}");
+            Console.WriteLine($"Daño: {Dano}");
             Console.WriteLine($"Altura: {Altura}");
+
             MovimientoAtacar();
         }
         //======================================================================

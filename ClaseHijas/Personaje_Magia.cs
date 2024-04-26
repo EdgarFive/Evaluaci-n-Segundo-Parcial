@@ -22,5 +22,15 @@ namespace Evaluación_Segundo_Parcial.ClaseHijas
         {
             Console.WriteLine($"Ivan Corriendo...");
         }
+        public void Se_Mostrardatos()
+        {
+            Console.WriteLine($"\nPersonaje Magia.");
+            Console.WriteLine($"\nHerencia =============================");
+            Mostrarinfo();
+            Console.WriteLine($"\nPersonales =============================");
+            Console.WriteLine($"Magia: {Cantidad_Magia}");
+            Console.WriteLine($"Mana: {cantidad_mana}");
+        }
+
     }
 }

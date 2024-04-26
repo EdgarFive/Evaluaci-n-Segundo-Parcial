@@ -2,6 +2,7 @@
 using Evaluación_Segundo_Parcial.ClaseBase;
 using Evaluación_Segundo_Parcial.ClaseHijas;
 using Evaluación_Segundo_Parcial.Eventos;
+using System.Runtime.InteropServices.Marshalling;
 
 //Evaluación Segundo Parcial Edgar Chinchilla ==================================================
 
@@ -11,8 +12,8 @@ using Evaluación_Segundo_Parcial.Eventos;
 //==============================================================================================
 
 
-static void ffpersonaje_curacion()
-{
+
+
     Personaje_Curacion ccpersonaje_curacion = new Personaje_Curacion();
 
     //Herencia =================================================
@@ -24,18 +25,22 @@ static void ffpersonaje_curacion()
     ccpersonaje_curacion.salud = 50;
     ccpersonaje_curacion.Velocidad = 10;
     ccpersonaje_curacion.Dano = 50;
-    ccpersonaje_curacion._Altura = 175;
-
+    ccpersonaje_curacion._Altura = 4;
 
     //Personal =================================================
     ccpersonaje_curacion.Cantidad_Curacion = 10;
     ccpersonaje_curacion.mana = 20;
 
-    ccpersonaje_curacion.Mostrarinfo();
-}
 
-static void ffpersonaje_fuerza()
-{
+    //INDEXADORES ==============================================
+    ccpersonaje_curacion[0] = "Báculo";
+    ccpersonaje_curacion[1] = "Daga";
+    ccpersonaje_curacion[2] = "Escudo";
+
+
+
+
+
     Personaje_Fuerza ccpersonaje_fuerza = new Personaje_Fuerza();
 
     //Herencia =================================================
@@ -52,10 +57,10 @@ static void ffpersonaje_fuerza()
 
     //Personal =================================================
     ccpersonaje_fuerza.Cantidad_Fuerza = 20;
-}
 
-static void ffpersonaje_megia()
-{
+
+
+
     Personaje_Magia ccpersonaje_magia = new Personaje_Magia();
 
     //Herencia =================================================
@@ -73,7 +78,8 @@ static void ffpersonaje_megia()
     //Personal =================================================
     ccpersonaje_magia.Cantidad_Magia = 10;
     ccpersonaje_magia.cantidad_mana = 20;
-}
+
+
 
 static void ffGenerar_Ecenario()
 {
@@ -104,8 +110,114 @@ static void ffpersonaje_secundario()
 //==============================================================================================
 //INICIO DEL PROGRAMA ==========================================================================
 //==============================================================================================
+for (int ii = 0; ii != -1;)
+{
+    try
+    {
+        Console.Clear();
+        Console.WriteLine($"Bienvenido al codigo de la Segunda evaluación de programación I.\nElija una opción:\n1. Abstracción.\n2. Herencia\n3. Polimorfismo\n4. Encapsulación\n5. Interfaces.\n6. Delegados\n7. Eventos.\n8. Indexadores\n9. Propiedades\n-1. Salir.");
+        int eemenu = int.Parse(Console.ReadLine());
+        switch (eemenu)
+        {
+            case 1:
+                Console.Clear();
+                Console.WriteLine($"ABSTRACCIÓN.");
+                Console.WriteLine($"Ver código en Clase padre.");
+                Console.ReadKey();
+                break;
+            case 2:
+                Console.Clear();
+                Console.WriteLine($"HERENCIA.");
+                ccpersonaje_curacion.Se_Mostrardatos();
+                Console.WriteLine($"====================================================================================================");
+                ccpersonaje_fuerza.Se_Mostrardatos();
+                Console.WriteLine($"====================================================================================================");
+                ccpersonaje_magia.Se_Mostrardatos();
+                Console.ReadKey();
+                break;
+            case 3:
+                Console.Clear();
+                Console.WriteLine($"POLIMORFISMO.");
+                Console.WriteLine($"Elije un personaje:\n1. Mia.\n2. Gater.\n3. Ivan.");
+                eemenu = int.Parse(Console.ReadLine());
+                switch (eemenu)
+                {
+                    case 1:
+                        Console.WriteLine($"Elije una opción:\n1. Caminar.\n2. Correr.");
+                        eemenu = int.Parse(Console.ReadLine());
+                        switch (eemenu)
+                        {
+                            case 1:
+                                ccpersonaje_curacion.Avanzar(1);
+                                break;
+                            case 2:
+                                ccpersonaje_curacion.Avanzar(1,1);
+                                break;
+                        }
+                        break;
+                    case 2:
+                        Console.WriteLine($"Elije una opción:\n1. Caminar.\n2. Correr.");
+                        eemenu = int.Parse(Console.ReadLine());
+                        switch (eemenu)
+                        {
+                            case 1:
+                                ccpersonaje_fuerza.Avanzar(1);
+                                break;
+                            case 2:
+                                ccpersonaje_fuerza.Avanzar(1, 1);
+                                break;
+                        }
 
-ffpersonaje_curacion();
+                        break;
+                    case 3:
+                        Console.WriteLine($"Elije una opción:\n1. Caminar.\n2. Correr.");
+                        eemenu = int.Parse(Console.ReadLine());
+                        switch (eemenu)
+                        {
+                            case 1:
+                                ccpersonaje_magia.Avanzar(1);
+                                break;
+                            case 2:
+                                ccpersonaje_magia.Avanzar(1, 1);
+                                break;
+                        }
+                        break;
+                }
+                Console.ReadKey();
+                break;
+            case 4:
+                Console.Clear();
+                Console.WriteLine($"ENCAPSULACIÓN.");
+                Console.WriteLine($"Mira el código en la Clase Padre.");
+                Console.ReadKey();
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case -1:
+                ii = -1;
+                break;
+            default:
+                Console.Clear();
+                Console.WriteLine($"Los parámetros ingresados no son validos; Inténtelo de nuevo.");
+                Console.ReadKey();
+                break;
+        }
+    }
+    catch (Exception eerror)
+    {
+        Console.Clear();
+        Console.WriteLine($"Ah ocurrido un error en el ingreso de datos; Error: \"{eerror}\"");
+        Console.ReadKey();
+    }
+}
 
 Console.WriteLine($"");
 
@@ -118,3 +230,12 @@ Console.ReadKey();
 //==============================================================================================
 //FIN DEL PROGRAMA =============================================================================
 //==============================================================================================
+
+// Imprimir las armas del personaje utilizando el indexador ===============================
+
+
+/*Console.WriteLine("Armas del personaje:");
+for (int i = 0; i < 3; i++)
+{
+    Console.WriteLine($"{i + 1}. {ccpersonaje_curacion[i]}");
+}*/
